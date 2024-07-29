@@ -1,0 +1,38 @@
+.home-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+  }
+  
+  .home-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .button {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+
+  .home-container p {
+    font-style: italic;
+    font-size: 1.6em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
