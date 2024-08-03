@@ -1,53 +1,49 @@
 .register-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
-  }
-  
-  .register-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .register-container form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .register-container .input-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  .register-container .input-group label {
-    margin-bottom: 5px;
-  }
-  
-  .register-container .input-group input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .register-container .input-group input:focus {
-    border-color: #007bff;
-  }
-  
-  .register-container button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .register-container button:hover {
-    background-color: #0056b3;
-  }
-  
+  max-width: 400px;
+  text-align: center;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.register-container h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.register-input-group {
+  margin-bottom: 15px;
+}
+
+.register-input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.register-input-group input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.register-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-button:hover {
+  background-color: #0056b3;
+}
+
+.register-error-message {
+  color: red;
+  font-size: 0.9em;
+}
