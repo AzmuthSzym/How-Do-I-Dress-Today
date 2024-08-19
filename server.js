@@ -1,4 +1,5 @@
 require('dotenv').config();
+const axios = require('axios');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -11,6 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET;
 const MONGO_URI = process.env.MONGO_URI;
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 // Middleware
 app.use(cors());
@@ -68,11 +70,54 @@ app.post('/api/login', async (req, res) => {
       { expiresIn: '1h' }
     );
 
-    res.json({ token });
+    res.json({ 
+              token: token,
+              username: user.username,
+     });
   } catch (err) {
     res.status(500).json({ error: 'Server error' });
   }
 });
+
+// Chat route
+app.post('/api/chat', async (req, res) => {
+  const { message } = req.body;
+
+  const systemMessage = {
+    role: 'system',
+    content: 'You are a fashion advisor. Help users choose outfits based on their wardrobe items and style preferences.',
+  };
+
+  const messages = [
+    systemMessage,
+    { role: 'user', content: 'I have a blue shirt, black jeans, and white sneakers. What can I wear today?' }
+  ];
+
+  try {
+    const response = await axios.post(
+      'https://api.openai.com/v1/chat/completions',
+      {
+        model: 'gpt-3.5-turbo',
+        messages: [
+          systemMessage,
+          { role: 'user', content: message },
+        ],
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${OPENAI_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    res.json({ response: response.data.choices[0].message.content });
+  } catch (error) {
+    console.error('Error while communicating with OpenAI API:', error.response ? error.response.data : error.message);
+    res.status(500).json({ error: 'Failed to fetch from OpenAI API' });
+  }
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

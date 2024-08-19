@@ -1,4 +1,3 @@
-// src/Login.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';  // Use useNavigate for redirection
@@ -12,15 +11,25 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
     try {
       const response = await axios.post('http://localhost:5000/api/login', { email, password });
-      // On successful login, save token and redirect to dashboard or home page
-      localStorage.setItem('token', response.data.token);
-      navigate('/');  // Redirect to home page or dashboard
+  
+      if (response.data.token) {
+        // Save the token and username in localStorage
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('username', response.data.username);
+  
+        // Redirect to the dashboard
+        navigate('/dashboard');
+      } else {
+        setErrorMessage('Invalid login. Please try again.');
+      }
     } catch (error) {
       setErrorMessage(error.response?.data?.error || 'Login failed. Please check your credentials.');
     }
-  };
+  };  
+  
 
   return (
     <div className="login-container">
