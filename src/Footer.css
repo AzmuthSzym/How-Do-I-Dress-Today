@@ -1,6 +1,6 @@
 /* src/Footer.css */
 .footer {
-    background-color: #333;
+    background-color: #504e4e;
     color: white;
     padding: 10px;
     text-align: center;
@@ -11,4 +11,20 @@
   
   .footer p {
     margin: 0;
+    margin-bottom: 2px;
+  }
+
+  .footer-icons {
+    margin-top: 10px; /* Space between contact info and icons */
+  }
+  
+  .footer-icons img {
+    width: 20px; /* Set size of icons */
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .footer-contact {
+    margin-bottom: 10px; /* Add space before icons */
+    font-size: 18px; /* Adjust size of contact text */
   }

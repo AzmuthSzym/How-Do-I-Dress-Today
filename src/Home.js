@@ -7,10 +7,10 @@ function Home() {
     <div className="home-container">
       <h1>Welcome to "How Do I Dress Today?" App</h1>
       <p className='app-text'>
-        Struggling to decide what to wear? Our app helps you create the perfect outfit
-        combinations effortlessly. Simply tell us what items you have in your wardrobe, and our AI
-        will suggest stylish outfits for any occasion. Register now to explore personalized fashion
-        advice, outfit visualizations, and more!
+        Welcome to "How Do I Dress Today?"! This app helps you choose your daily outfit by providing personalized fashion advice. 
+        Just tell us what items you have in your wardrobe, and we'll suggest what to wear. Whether you're going for a casual look, 
+        a business meeting, or a night out, we've got you covered with stylish ideas. Ask for advice, get outfit suggestions, and even 
+        see visualizations to help you make the best choice!
       </p>
       <Link to="/register">
         <button className="register-button button">Register Now</button>

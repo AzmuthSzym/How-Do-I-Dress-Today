@@ -1,6 +1,6 @@
 /* src/Header.css */
 .header {
-    background-color: #333;
+    background-color: #504e4e;
     color: white;
     padding: 10px;
     text-align: center;
@@ -9,8 +9,13 @@
   .header h1 {
     margin: 0;
     font-size: 24px;
+    margin-bottom: 10px;
   }
   
+  .nav {
+    gap: 20px;
+  }
+
   .header nav a {
     color: white;
     margin: 0 15px;
@@ -20,4 +25,10 @@
   
   .header nav a:hover {
     text-decoration: underline;
+  }
+  
+  .nav-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px; /* Space between icon and text */
   }

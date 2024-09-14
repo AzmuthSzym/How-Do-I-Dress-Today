@@ -30,9 +30,17 @@
     font-style: italic;
     font-size: 1.6em;
     margin-bottom: 30px;
-    line-height: 1.6;
-    max-width: 600px;
+    line-height: 1.8;
+    max-width: 1050px;
     margin-left: auto;
     margin-right: auto;
   }
   
+  .app-text {
+    text-align:justify; /* Align text for a neat appearance */
+    color: #000000;       /* Change text color to a softer shade for better contrast */
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Optional: Add a light background to the text */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Optional: Add subtle shadow */
+  }
